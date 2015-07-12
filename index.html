@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>HangMan</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <h1>Password Hangman</h1>
+      <h2>Can you guess the password? </h2><h3>Hint: It's not a very good one!</h3>
+      <p>Press a key to guess. The password is alphanumeric and case-sensitive.</p>
+    </div>
+
+    <div class="game">
+      Guesses: <div id="guesses"></div>
+      Password: <div id="password"></div>
+      Remaining lives: <div id="lives"></div>
+      <div id="gameStatus">
+        <h3 id="status"></div>
+        </div>
+      </div>
+
+      <form name="formex">
+        <input type="hidden" name="keypress"/>
+      </form>
+
+      <button id="newGame">New game</button>
+
+    </div>
+
+    <script language="javascript" type="text/javascript" src="js/script.js"></script>
+  </body>
+  </html>
