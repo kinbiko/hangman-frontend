@@ -2,34 +2,49 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>HangMan</title>
+  <title>Password Hangman</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
   <div class="wrapper">
-    <div class="header">
-      <h1>Password Hangman</h1>
-      <h2>Can you guess the password? </h2><h3>Hint: It's not a very good one!</h3>
-      <p>Press a key to guess. The password is alphanumeric and case-sensitive.</p>
-    </div>
+    <div class="main">
+      <div class="header">
+        <h1>Password Hangman</h1>
+        <h2>Can you guess the password? </h2>
+        <h3>Hint: It's one of the 10 000 most common passwords!</h3>
+        <p>Press a key on your keyboard to guess.</p>
+      </div>
 
-    <div class="game">
-      Guesses: <div id="guesses"></div>
-      Password: <div id="password"></div>
-      Remaining lives: <div id="lives"></div>
-      <div id="gameStatus">
-        <h3 id="status"></div>
+      <div class="game">
+        Guesses: <div id="guesses"></div>
+        Password: <div id="password"></div>
+        Remaining lives: <div id="lives"></div>
+        <div id="gameStatus">
+          <h3 id="status"></h3>
         </div>
       </div>
 
-      <form name="formex">
-        <input type="hidden" name="keypress"/>
-      </form>
-
       <button id="newGame">New game</button>
 
+    </div> 
+    <!-- end of main div -->
+
+    <div id ="ascii">
+      <pre id="asciiArt1"></pre>
+      <pre id="asciiArt2"></pre>
+      <pre id="asciiArt3"></pre>
+      <pre id="asciiArt4"></pre>
+      <pre id="asciiArt5"></pre>
+      <pre id="asciiArt6"></pre>
+      <pre id="asciiArt7"></pre>
     </div>
 
-    <script language="javascript" type="text/javascript" src="js/script.js"></script>
-  </body>
-  </html>
+    <form name="formex">
+      <input type="hidden" name="keypress"/>
+    </form>
+  <!-- End of wrapper div -->
+  </div>
+
+  <script language="javascript" type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

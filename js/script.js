@@ -66,9 +66,16 @@ function newGame(){
   replaceAllRegex = /./g //Regex: /./ = all characters, g = global (throughout the string).
   secretWord = word.replace(replaceAllRegex, "*");
   guesses = [];
-  lives = 5;
+  lives = 6;
   status = "";
   playing = true;
+  asciiArt1 = " ------------";
+  asciiArt2 = " |       |   ";
+  asciiArt3 = " |           ";
+  asciiArt4 = " |           ";
+  asciiArt5 = " |           ";
+  asciiArt6 = " |           ";
+  asciiArt7 = "/|\\          ";
   updateView();
 }
 
@@ -78,7 +85,7 @@ function gameWon(){
 }
 
 function gameLost(){
-  status = "You've lost! The password was '" + word + "'.";
+  status = "You've lost! The password was '<span id='correctWord'>" +  word + "</span>'.";
   playing = false;
 }
 
@@ -94,6 +101,7 @@ function modifySecretWord(guess){
 function modifyLives(){
   console.log("decrementing lives.");
   lives--;
+  writeAscii(lives);
 }
 
 String.prototype.replaceAt=function(index, character) {
@@ -105,12 +113,42 @@ function updateView(){
   document.getElementById("password").innerHTML = secretWord;
   document.getElementById("lives").innerHTML = lives;
   document.getElementById("status").innerHTML = status;
+  document.getElementById("asciiArt1").innerHTML = asciiArt1;
+  document.getElementById("asciiArt2").innerHTML = asciiArt2;
+  document.getElementById("asciiArt3").innerHTML = asciiArt3;
+  document.getElementById("asciiArt4").innerHTML = asciiArt4;
+  document.getElementById("asciiArt5").innerHTML = asciiArt5;
+  document.getElementById("asciiArt6").innerHTML = asciiArt6;
+  document.getElementById("asciiArt7").innerHTML = asciiArt7;
 }
 
-function httpGet(theUrl)
-{
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, false );
-    xmlHttp.send( null );
-    return xmlHttp.responseText;
+function httpGet(theUrl) {
+  var xmlHttp = new XMLHttpRequest();
+  xmlHttp.open( "GET", theUrl, false );
+  xmlHttp.send( null );
+  return xmlHttp.responseText;
+}
+
+function writeAscii(lives){
+  switch(lives){
+    case 5:
+      asciiArt3 = " |       O   ";
+      break;
+    case 4:
+      asciiArt4 = " |      (_)  ";
+      break;
+    case 3:
+      asciiArt4 = " |     /(_)  ";
+      break;
+    case 2:
+      asciiArt4 = " |     /(_)\\ ";
+      break;
+    case 1:
+      asciiArt5 = " |      |    ";
+      break;
+    case 0:
+      asciiArt5 = " |      | |  ";
+      break;
+  }
+
 }

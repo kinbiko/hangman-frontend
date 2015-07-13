@@ -1,2 +1,1 @@
-# hangman-frontend
-frontend to hangman
+UI for the hangman game, as seen on www.kinbiko.com/hangman

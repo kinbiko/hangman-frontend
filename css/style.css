@@ -40,9 +40,9 @@ button {
   -webkit-border-radius: 5px;
   border-radius: 5px;
   -khtml-border-radius: 5px;
-  background: #c1d72e;
-  color: #fff;
-  border: solid 1px #fff;
+  background: #000;
+  color: #c0ffee;
+  border: solid 1px #c0ffee;
   text-decoration: none;
   cursor: pointer;
   font-size: 1.2em;
@@ -56,7 +56,20 @@ button:hover {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background: #fff;
-  border: solid 1px #fff;
-  color: #c1d72e;
+  background: #000;
+  border: solid 1px #c0ffee;
+  color: red;
+}
+
+#correctWord {
+  color: red;
+}
+
+#ascii {
+  color: red;
+}
+
+pre {
+  margin-top: 0em;
+  margin-bottom: 0em; 
 }
